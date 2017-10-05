@@ -13,13 +13,13 @@ class CreditCard
     @card_number = card_number.to_i.digits.reverse
   end
 
-  def card_type_finder()
-    if card_number.length == 16
-      "VISA"
-    elsif card_number.length == 15
-      "Amex"
-    end
-  end
+  # def card_type_finder()
+  #   if card_number.length == 16
+  #     "VISA"
+  #   elsif card_number.length == 15
+  #     "Amex"
+  #   end
+  # end
 
   def double_select_digits()
     digits_doubled = []
@@ -57,11 +57,11 @@ class CreditCard
     return valid
   end
 
-  def check_valid(valid, card_type)
+  def check_valid(valid)
     if valid
-      puts "The #{card_type} card is valid!"
+      puts "The card is valid!"
     else
-      puts "The #{card_type} card is invalid!"
+      puts "The card is invalid!"
     end
   end
 
@@ -70,7 +70,7 @@ class CreditCard
     digits_doubled = double_select_digits()
     digits_fixed = fix_greater_than_nine(digits_doubled)
     valid = check_sum(digits_fixed)
-    card_type = card_type_finder
-    check_valid(valid, card_type)
+
+    check_valid(valid)
   end
 end
