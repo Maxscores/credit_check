@@ -1,15 +1,8 @@
-require 'pry'
-
 # Your Luhn Algorithm Here
 #class credit_number_checker (card_number, valid)
 class CreditCard
-  attr_accessor :card_number
 
   def initialize(card_number)
-    @card_number = card_number
-  end
-
-  def card_number_to_usable()
     @card_number = card_number.to_i.digits.reverse
   end
 
@@ -70,7 +63,6 @@ class CreditCard
   end
 
   def run_credit_checker()
-    card_number_to_usable()
     digits_doubled = double_select_digits()
     digits_fixed = fix_greater_than_nine(digits_doubled)
     valid = check_sum(digits_fixed)
