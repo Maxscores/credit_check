@@ -21,6 +21,10 @@ class CreditCard
   #   end
   # end
 
+  # def print_card_type(card_type)
+  #     puts "Checked a #{card_type} card"
+  # end
+
   def double_select_digits()
     digits_doubled = []
     #card_type = card_type_finder(card_number)
@@ -70,7 +74,7 @@ class CreditCard
     digits_doubled = double_select_digits()
     digits_fixed = fix_greater_than_nine(digits_doubled)
     valid = check_sum(digits_fixed)
-
+    # print_card_type(card_type_finder)
     check_valid(valid)
   end
 end
